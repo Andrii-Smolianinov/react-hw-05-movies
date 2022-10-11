@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { getMovieById } from 'components/API/Api';
 import {
   LinkMovie,
@@ -22,19 +22,23 @@ const navItems = [
 export const MoviesDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-  
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from ?? '/';
+  const goBack = () => navigate(from);
 
   useEffect(() => {
     getMovieById(id).then(setMovie);
   }, [id]);
- 
+
   return (
     <>
       {movie && (
         <MainDiv>
           <FlexDiv>
             <ImgDiv>
-              <button >
+              <button onClick={goBack}>
                 <TbArrowBack size={16} />
                 Go back
               </button>
@@ -60,10 +64,8 @@ export const MoviesDetails = () => {
               </p>
             </MenuDiv>
           </FlexDiv>
-
           <LinksDiv>
             <p>Aditional information</p>
-
             {navItems.map(({ href, text, icon: Icon }) => (
               <LinkMovie key={href} to={href} end>
                 <Icon size={22} />
@@ -71,7 +73,9 @@ export const MoviesDetails = () => {
               </LinkMovie>
             ))}
           </LinksDiv>
+          {/* <Suspense fallback={<p>Loading...</p>}> */}
           <Outlet />
+          {/* </Suspense> */}
         </MainDiv>
       )}
     </>

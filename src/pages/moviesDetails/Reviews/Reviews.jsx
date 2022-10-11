@@ -9,7 +9,6 @@ export const Reviews = () => {
   useEffect(() => {
     getMovieReviews(id).then(setRewiews);
   }, [id]);
-  console.log('reviews', reviews);
   if (!reviews.total_results) {
     return <Tittle>We don't have any reviews for this movie</Tittle>;
   }

@@ -9,8 +9,7 @@ import {
 } from 'components/TrandMovieList/TandMoviesListStyled';
 import noPhoto from 'images/no-image-icon.png';
 
-export const TrandMovieList = ({ movies }) => {
-  console.log(movies);
+export const TrandMovieList = ({ movies }) => {  
   const elements = movies.map(({ id, title, poster_path }) => (
     <ItemLi key={id}>
       <Link to={`/movies/${id}`}>

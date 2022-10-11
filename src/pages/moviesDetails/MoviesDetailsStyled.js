@@ -67,8 +67,19 @@ export const ImgDiv = styled.div`
 export const MenuDiv = styled.div`
   padding: 30px;
   color: #90ee90;
+  & h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 1000;
+    letter-spacing: 6px;    
+    text-shadow: 2px 3px 12px #00ffff;
+  }
+  & h3 {
+    font-size: 24px;
+  }
   & p {
     max-width: 800px;
+    font-size: 20px;
   }
 `;
 
