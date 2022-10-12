@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Form } from 'components/SearchBox/SearchBoxStyled';
 
@@ -32,4 +33,7 @@ export const SearchBox = ({ onSearch }) => {
       </Form>
     </>
   );
+};
+SearchBox.propTypes = {
+  onSearch: PropTypes.func,
 };

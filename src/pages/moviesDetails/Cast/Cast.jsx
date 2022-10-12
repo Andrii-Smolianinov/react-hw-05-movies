@@ -4,7 +4,7 @@ import noPhoto from 'images/no-image-icon.png';
 import { getMovieCast } from 'components/API/Api';
 import { CastList, ItemLi } from 'pages/moviesDetails/Cast/CastStyled';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState(0);
 
@@ -34,3 +34,5 @@ export const Cast = () => {
   });
   return <CastList>{elements}</CastList>;
 };
+
+export default Cast;

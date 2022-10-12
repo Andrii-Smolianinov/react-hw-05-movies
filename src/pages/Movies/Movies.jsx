@@ -7,7 +7,7 @@ import { Main } from 'pages/Home/HomeStyled';
 import { Loader } from 'components/Loader/Loader';
 
 export const Movies = () => {
-  const location = useLocation()  
+  const location = useLocation();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -41,7 +41,7 @@ export const Movies = () => {
     <Main>
       {loading && <Loader />}
       <SearchBox value={searchQuerry} onSearch={changeSearch} />
-      <MovieList movies={movies} state={{ from: location}} />
+      <MovieList movies={movies} state={{ from: location }} />
     </Main>
   );
 };

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieReviews } from 'components/API/Api';
 import { Tittle, ReviewsDiv } from 'pages/moviesDetails/Reviews/ReviewsStyled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { id } = useParams();
   const [reviews, setRewiews] = useState(0);
   useEffect(() => {
@@ -24,3 +24,4 @@ export const Reviews = () => {
   });
   return <div>{elements}</div>;
 };
+export default Reviews;

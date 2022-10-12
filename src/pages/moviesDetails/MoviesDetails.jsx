@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { getMovieById } from 'components/API/Api';
+import { Loader } from 'components/Loader/Loader';
 import {
   LinkMovie,
   FlexDiv,
@@ -73,9 +75,9 @@ export const MoviesDetails = () => {
               </LinkMovie>
             ))}
           </LinksDiv>
-          {/* <Suspense fallback={<p>Loading...</p>}> */}
+          <Suspense fallback={<Loader />}>
           <Outlet />
-          {/* </Suspense> */}
+          </Suspense>
         </MainDiv>
       )}
     </>

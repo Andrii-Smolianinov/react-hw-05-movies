@@ -12,7 +12,7 @@ export const CastList = styled.ul`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;    
   }
 `;
 
@@ -33,7 +33,6 @@ export const ItemLi = styled.li`
     text-decoration: none;
     color: #b0c4de;
   }
-
   &:hover {
     box-shadow: rgba(0, 255, 0, 0.4) -5px 5px, rgba(0, 255, 0, 0.3) -10px 10px,
       rgba(0, 255, 0, 0.2) -15px 15px;

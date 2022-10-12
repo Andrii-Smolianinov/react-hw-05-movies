@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import noPhoto from 'images/no-image-icon.png';
 import {
   MovieUl,
@@ -27,4 +28,7 @@ export const MovieList = ({ movies }) => {
   ));
 
   return <MovieUl>{elements}</MovieUl>;
+};
+MovieList.propTypes = {
+  movies: PropTypes.array,
 };

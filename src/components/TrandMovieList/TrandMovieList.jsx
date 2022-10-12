@@ -1,15 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   MoviesList,
   ItemLi,
   TittleDiv,
   Img,
-  
 } from 'components/TrandMovieList/TandMoviesListStyled';
 import noPhoto from 'images/no-image-icon.png';
 
-export const TrandMovieList = ({ movies }) => {  
+export const TrandMovieList = ({ movies }) => {
   const elements = movies.map(({ id, title, poster_path }) => (
     <ItemLi key={id}>
       <Link to={`/movies/${id}`}>
@@ -29,4 +29,7 @@ export const TrandMovieList = ({ movies }) => {
   ));
 
   return <MoviesList>{elements}</MoviesList>;
+};
+TrandMovieList.propTypes = {
+  movies: PropTypes.array,
 };

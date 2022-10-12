@@ -5,10 +5,10 @@ export const Form = styled.form`
   padding-top: 20px;
   align-items: center;
   height: 40px;
-  
 
-  & input { 
+  & input {
     width: 200px;
+    font-size: 14px;
     margin-right: 8px;
     border: 1px solid transparent;
     border-radius: 4px;
