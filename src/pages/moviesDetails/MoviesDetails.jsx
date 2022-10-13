@@ -27,7 +27,7 @@ export const MoviesDetails = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from ?? '/';
+  const from = location.state?.from ?? '/movies';
   const goBack = () => navigate(from);
 
   useEffect(() => {
